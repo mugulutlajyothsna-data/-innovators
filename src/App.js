@@ -1,3 +1,4 @@
+import LoadingScreen from './components/LoadingScreen';
 import './App.css';
 
 // router
@@ -43,22 +44,13 @@ function AppContent() {
 	useAchievementsCheck();
 
 	// Show loading spinner while checking authentication
-	if (loading) {
-		return (
-			<main className="App">
-				<div style={{ 
-					display: 'flex', 
-					justifyContent: 'center', 
-					alignItems: 'center', 
-					height: '100vh',
-					background: '#030303',
-					color: 'white'
-				}}>
-					<div>Loading...</div>
-				</div>
-			</main>
-		);
-	}
+if (loading) {
+  return (
+    <main className="App">
+      <LoadingScreen />
+    </main>
+  );
+}
 
 	// Show hero page if user is not authenticated
 	if (!user) {
