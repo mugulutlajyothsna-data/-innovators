@@ -3,6 +3,7 @@ import getColors from '../utils/getColors';
 
 export const useColorsStore = create(
 	() => ({
-		colors: getColors('dark') // Default to dark theme colors
+		colors: getColors('dark'), // Default to dark theme colors
+logInit: () => console.log('🎨 Colors store initialized'),
 	})
 );
